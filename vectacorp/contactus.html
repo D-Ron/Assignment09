@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Vecta Corp.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+ 
+
+    <style>
+        .ui-tooltip {
+            color: black;
+            font-size: .8em;
+            opacity: 1;
+            filter: alpha(opacity=100); /* For IE8 and earlier */            
+        }        
+        
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+      margin: 30px 0 0 0;
+    }
+    .overflow {
+      height: 200px;
+    }
+
+
+   </style>
+    
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+	
+	<script src="js/jquery.mobilemenu.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#responsive-menu').mobileMenu();
+            $('#responsive-menu').tooltip();            
+		});
+	</script>
+    
+	<script>
+		$(document).ready(function(){
+                $("input").checkboxradio();
+                $( "fieldset" ).controlgroup();
+                $("#employees").selectmenu();   
+                $( "#salutation" ).selectmenu();  
+  
+            
+/*           
+var input = $( "form input:checkbox" )
+    .css({
+    background: "yellow",
+    border: "3px red solid"
+  });
+*/ 
+            
+		});
+	</script>
+    
+    
+	<script>
+		$(document).ready(function(){
+                $("input[value='Submit Now']").click(function() {                    
+                    alert('Thank you for your submission.');
+                });        
+		});
+	</script>
+    
+</head>
+<body>
+	<main class="container">
+		<figure class="three columns">
+			<img src="images/logo.gif" class="scale-with-grid" alt="">
+		</figure>
+		
+		<nav class="thirteen columns">
+			<ul id="responsive-menu">
+				<li><a href="index.html" title="Home Page">Home</a></li>
+				<li><a href="aboutus.html" title="What is Vecta Corp?">About Us</a></li>
+				<li><a href="solutions.html" title="Vecta Corp. offers 3 solutions for prospecting, converting, and retaining customers.">Solutions</a></li>
+				<li><a href="support.html" title="Need help?">Support</a></li>
+				<li><a href="contactus.html" title="Questions?" >Contact Us</a></li>
+			</ul>
+		</nav>
+		
+		<header class="sixteen columns">
+			<img src="images/header.gif" class="scale-with-grid" alt="">
+		</header>
+		
+        
+        
+		<section id="welcome" class="eleven columns">
+			<h4>Contact Us</h4>
+            
+            
+			<form name="contactform" action="http://www.vectacorp.com/vc/scripts/contactus.asp"  method="post"> <!--  -->
+ 
+                    
+<!-- This input field is causing errors for jQuery. Why?   -->                                
+                <fieldset>
+			    <legend>Contact a Sales Representative</legend>
+			    Name:
+			    <input type="text" name="name" maxlength="30" required="">
+			    Company Name:
+			    <input type="text" name="companyname" maxlength="30" required="">
+			    Phone:
+			    <input type="tel" name="phonenumber" maxlength="25" required="" pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Format: 555-555-5555">
+			    Email:
+				<input type="email" name="email" maxlength="30" required="">
+		   
+
+ 
+
+                <fieldset>    
+                    <legend>What VectaCorp products are you interested in? </legend>
+                    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect 2.0</label>
+                    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
+                    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
+                </fieldset>
+			    <br>
+                    
+                
+                    
+                <fieldset>
+                    <legend> What is your current infrastructure? </legend>                    
+                    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
+                    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
+                    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
+                    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
+                </fieldset>
+                </div>    
+			    <br>              
+                
+			 <label for="employees">How many employees do you have?</label>
+			    <select name="companysize" id='employees'>
+                    <option value="1-10">1-10</option>
+                    <option value="11-100">11-100</option>
+                    <option value="101-1000">101-1000</option>
+                    <option value="More than 1000">More than 1000</option>
+		        </select>
+    
+            
+            
+			    How did you hear about us?
+			    <select name="hearaboutus" multiple="" size="5">
+                    <option value="Magazine Ad">Magazine Ad</option>
+                    <option value="Radio Ad">Radio Ad</option>
+                    <option value="TV Ad">TV Ad</option>
+                    <option value="Word of Mouth">Word of Mouth</option>
+                    <option value="Other">Other</option>
+		        </select>
+           
+			    Questions or comments for our sales representatives?
+			    <textarea name="questions" size="30" rows="5"></textarea>
+			    <input type="submit" id='submit' name="submit" value="Submit Now">
+		    	</fieldset>
+			</form>
+	    </section>
+		
+		<section id="testimonials" class="five columns">
+			<h4>Map</h4>
+			<p>&nbsp;</p>
+
+		</section>
+	</main>
+</body>
+</html>
